@@ -1,0 +1,11 @@
+jaka jest różnica między klasą a obiektem?
+klasa to zbiór obiektow, a obiekt to zbior cech, funkcji i instrukcji.
+czym jest metoda?
+procedura, funkcja lub operacja przypisana do klasy obiektów.
+czym jest pole klasy?
+wartość, zmienna.
+jakie są zalety modelowania obiektowego?
+zaletami są:
+uproszczenie programowania.
+korzystanie z szablonów utworzonych przez nas w obiektowym języku.
+zmniejszenie czasu programowania.
