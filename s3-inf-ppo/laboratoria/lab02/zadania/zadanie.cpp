@@ -3,6 +3,7 @@
 #include <string>
 #include <sstream>
 #include <vector>
+#include <iomanip>
 
 using namespace std;
 
@@ -73,7 +74,7 @@ int main() {
 		cout << studentsNrI[i] << " " << studentsFn[i] << " " << studentsLn[i] << " " << studentsSt[i] << endl;
 	}
 	
-	cout << "Gelczynski (Jakub 40300)" << endl;
+	cout << "Gelczynski Jakub (40300)" << endl;
 	
 	return 0;
 }
