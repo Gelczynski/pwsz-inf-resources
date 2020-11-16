@@ -1,0 +1,11 @@
+this to instrukcja, ktora wskazuje w konstruktorze na zmienna zainicjowana
+poza konstruktora, ale tylko w klasie konstruktora. Tym sposobem odrozniamy zmienna z klasy od
+zmiennej zainicjowanej w konstruktorze klasy.
+
+Mozna zdefiniowac wiecej niz jeden konstruktor. Konstruktory musza miec inne parametry, ale
+nazwy musza miec takie same jak nazwa klasy.
+
+Operator << w C++ to operator wyjscia.
+
+Funkcja ustawia punkt startowy, ktory jest stosowany do generowania serii
+pseudo losowych liczb calkowitych.

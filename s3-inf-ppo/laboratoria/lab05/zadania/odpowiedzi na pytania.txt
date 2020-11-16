@@ -1,0 +1,12 @@
+Dziedziczenie polega na przekazywaniu cech, funkcji klas. Podklasy moga dziedziczyc od nadklasy
+cechy, fukncje, instrukcje, metody i pola. Podklasy moga wtedy uzyc je jako wlasne.
+Dziedziczenie pozwala na stworzenie szablonow do podklas i dzieki temu zaoszczedzic czas.
+
+Klasa oznaczona jako final nie może być dziedziczona. final moze byc uzyty
+przy deklaracji klasy aby zapobiec dziedziczeniu danej klasy.
+
+Klasa oznaczona jako abstract moze byc uzyta tylko jako nadklasa do dziedziczenia.
+Takiej nadklasy nie bedzie mozna uzyc do czegokolwiek innego niz do dziedziczenia.
+
+Nie ma ograniczen w ilosci podklas dziedziczacych z jednej nadklasy.
+
