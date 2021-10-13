@@ -3,7 +3,7 @@
 #include <string>
 #include <sstream>
 #include <vector>
-#include <iomanip>
+#include <ctime>
 
 using namespace std;
 
@@ -31,21 +31,23 @@ string getRandomStudentLName(string lnames[]) {
 string getRandomStudentStatus() {
 	int randomNumber = rand() % 2;
 	string status;
-	if (randomNumber == 1) status = "aktywny";
-	else status = "nie aktywny";
+	if (randomNumber == true) status = "aktywny";
+	else status = "nieaktywny";
 	return status;
 }
 
 int main() {
+	srand(time(0));
 	string studentsNrI[STUDENTS_COUNT];
 	string studentsFn[STUDENTS_COUNT];
 	string studentsLn[STUDENTS_COUNT];
 	string studentsSt[STUDENTS_COUNT];
-	string fnames[STUDENTS_COUNT] =
-	{"Janusz", "Agnieszka", "Joanna", "Aleksander", "Jakub", "Tomasz", "Patryk", "Lukasz", "Izabela", "Karolina"};
-	string lnames[STUDENTS_COUNT] =
+	string fnames[] =
+	{"Janusz", "Agnieszka", "Joanna", "Aleksander", "Jakub", "Tomasz", "Patryk", "Lukasz", "Izabela",
+	"Karolina", "Piotr", "Marian"};//8 kolejnych i losowanie
+	string lnames[] =
 	{"Kowalski", "Nowakowski", "Januszowski", "Legnicki", "Polski", "Warszawski", "Jaki", "Taki",
-	"Piotrowski", "Andrzejewski"};
+	"Piotrowski", "Andrzejewski", "Chojnowski", "Jaworzynski"}; //8 kolejnych i losowanie
 	
 	for(int i = 0; i < STUDENTS_COUNT; i++) {
 		studentsNrI[i] = getRandomStudentNumber();
@@ -53,28 +55,35 @@ int main() {
 		studentsLn[i] = getRandomStudentLName(lnames);
 		studentsSt[i] = getRandomStudentStatus();
 	}
-	
-	int number;
 	char character;
-	char a = 'a';
 	
 	for(int i = 0; i < STUDENTS_COUNT; i++) {
-		number = studentsFn[i].length();
-		character = studentsFn[i].find(number-1);
-		if(character == a) {
-			number = studentsLn[i].length();
-			studentsLn[i].erase(number-1);
+		character = studentsFn[i][studentsFn[i].size()-1];
+		if(character == 'a') {
+			studentsLn[i].pop_back();
 			studentsLn[i].append("a");
+			studentsSt[i].pop_back();
+			studentsSt[i].append("a");
 		}
 	}
 	
-	cout  << "Students group have been filled." << endl << endl;
+	cout << "Lista aktywnych studentow:\n" << endl;
 	
-	for(int i = 0; i < STUDENTS_COUNT; i++) {
-		cout << studentsNrI[i] << " " << studentsFn[i] << " " << studentsLn[i] << " " << studentsSt[i] << endl;
+	for(int i = 0; i < STUDENTS_COUNT; i++)
+	{
+		if(studentsSt[i] == "aktywny" || studentsSt[i] == "aktywna") {
+			cout << studentsLn[i] << " " << studentsFn[i] << " (" << studentsNrI[i] << ")" << endl;
+		}
 	}
 	
-	cout << "Gelczynski Jakub (40300)" << endl;
+	cout << "\nlista nieaktywnych studentow:\n" << endl;
+	
+	for(int i = 0; i < STUDENTS_COUNT; i++)
+	{
+		if(studentsSt[i] == "nieaktywny" || studentsSt[i] == "nieaktywna") {
+			cout << studentsLn[i] << " " << studentsFn[i] << " (" << studentsNrI[i] << ")" << endl;
+		}
+	}
 	
 	return 0;
 }

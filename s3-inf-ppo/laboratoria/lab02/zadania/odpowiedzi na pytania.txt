@@ -1,11 +1,22 @@
 jaka jest różnica między klasą a obiektem?
 klasa to zbiór obiektow, a obiekt to zbior cech, funkcji i instrukcji.
+
 czym jest metoda?
 procedura, funkcja lub operacja przypisana do klasy obiektów.
+
 czym jest pole klasy?
 wartość, zmienna.
+
 jakie są zalety modelowania obiektowego?
 zaletami są:
 uproszczenie programowania.
 korzystanie z szablonów utworzonych przez nas w obiektowym języku.
 zmniejszenie czasu programowania.
+
+jakie są różnice między C a PHP?
+
+php to interpretowany język skryptowy, który służy do tworzenia dynamicznych stron www i
+aplikacji internetowych. PHP jest językiem backendowym i najczęściej pisane są w nim różne funkcjonalności dla serwerów.
+
+C to język strukturalny. Jest najczęściej używany do zadań niskopoziomowych
+takich jak tworzenie oprogramowania dla systemów czy mikrokontrolerów.
