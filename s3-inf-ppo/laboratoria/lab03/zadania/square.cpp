@@ -16,7 +16,6 @@ class Points {
 			this->y3 = y3;
 			this->x4 = x4;
 			this->y4 = y4;
-			cout << this->x1 << endl;
 		}
 };
 
@@ -29,35 +28,58 @@ class Square {
 		
 		void printCoordinates() {
 			cout << "wierzcholki kwadratu:" << endl;
-			cout << "[" << this->vertices.x1 << ", " << this->vertices.y1 << "]" << endl;
-			cout << "[" << this->vertices.x2 << ", " << this->vertices.y2 << "]" << endl;
-			cout << "[" << this->vertices.x3 << ", " << this->vertices.y3 << "]" << endl;
-			cout << "[" << this->vertices.x4 << ", " << this->vertices.y4 << "]" << endl;
+			cout << "(" << this->vertices.x1 << ", " << this->vertices.y1 << ")" << endl;
+			cout << "(" << this->vertices.x2 << ", " << this->vertices.y2 << ")" << endl;
+			cout << "(" << this->vertices.x3 << ", " << this->vertices.y3 << ")" << endl;
+			cout << "(" << this->vertices.x4 << ", " << this->vertices.y4 << ")" << endl;
 		}
 };
 
 int main() {
 	float x1, y1, x2, y2, x3, y3, x4, y4;
-	cout << "Podaj wierzcholek x1"<< endl;
-	cin >> x1;
-	cout << "Podaj wierzcholek y1"<< endl;
-	cin >> y1;
-	cout << "Podaj wierzcholek x2"<< endl;
-	cin >> x2;
-	cout << "Podaj wierzcholek y2"<< endl;
-	cin >> y2;
-	cout << "Podaj wierzcholek x3"<< endl;
-	cin >> x3;
-	cout << "Podaj wierzcholek y3"<< endl;
-	cin >> y3;
-	cout << "Podaj wierzcholek x4"<< endl;
-	cin >> x4;
-	cout << "Podaj wierzcholek y4"<< endl;
-	cin >> y4;
-	Points vertices(x1, y1, x2, y2, x3, y3, x4, y4);
-	Square square(vertices);
-	square.printCoordinates();
-		
+	float n;
+	int n1;
+	cout << "Podaj ilosc kwadratow:" << endl;
+	
+	int licznik=0;
+	
+	while(licznik==0)
+	{
+		licznik++;
+		cin >> n;
+		n1=n;
+		if(n==0 || n>n1)
+		{
+			cout << "Liczba kwadratow nie moze wyniesc zero, nie moze tez byc z ulamkiem! Podaj ilosc kwadratow:" << endl;
+			licznik=0;
+		}
+	}
+	
+	for(int i=0; i<n; i++) 
+	{
+		cout << "\nkwadrat nr " << i+1 << endl;
+		cout << "Podaj wierzcholek x1"<< endl;
+		cin >> x1;
+		cout << "Podaj wierzcholek y1"<< endl;
+		cin >> y1;
+		cout << "Podaj wierzcholek x2"<< endl;
+		cin >> x2;
+		cout << "Podaj wierzcholek y2"<< endl;
+		cin >> y2;
+		cout << "Podaj wierzcholek x3"<< endl;
+		cin >> x3;
+		cout << "Podaj wierzcholek y3"<< endl;
+		cin >> y3;
+		cout << "Podaj wierzcholek x4"<< endl;
+		cin >> x4;
+		cout << "Podaj wierzcholek y4"<< endl;
+		cin >> y4;
+		Points vertices(x1, y1, x2, y2, x3, y3, x4, y4);
+		Square square(vertices);
+		square.printCoordinates();
+	}
+	
+	
 	system("PAUSE");
 	return 0;
 }

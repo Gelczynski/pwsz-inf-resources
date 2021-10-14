@@ -1,11 +1,35 @@
-this to instrukcja, ktora wskazuje w konstruktorze na zmienna zainicjowana
-poza konstruktora, ale tylko w klasie konstruktora. Tym sposobem odrozniamy zmienna z klasy od
+czym jest this?
+this to instrukcja, która wskazuje w konstruktorze na zmienną zainicjowaną
+poza konstruktora, ale tylko w klasie konstruktora. Tym sposobem odróżniamy zmienną z klasy od
 zmiennej zainicjowanej w konstruktorze klasy.
 
-Mozna zdefiniowac wiecej niz jeden konstruktor. Konstruktory musza miec inne parametry, ale
-nazwy musza miec takie same jak nazwa klasy.
+czy można zdefiniować więcej niż jeden konstruktor?
+Można zdefiniować więcej niż jeden konstruktor. Konstruktory muszą miec inne parametry, ale
+nazwy muszą mieć takie same jak nazwa klasy.
 
-Operator << w C++ to operator wyjscia.
+kiedy i gdzie wywoływany jest destruktor obiektu?
+Destruktor obiektu jest wywoływany przed usunięciem obiektu. Jest wywoływany gdy automatycznie,
+gdy obiekt wykracza poza zakres lub jest jawnie niszczony przez wywołanie metody delete.
 
-Funkcja ustawia punkt startowy, ktory jest stosowany do generowania serii
-pseudo losowych liczb calkowitych.
+czym się różnią programy napisane w C++, Javie i PHP?
+PHP do prawidłowego działania wymaga znacznika otwierającego: <?php
+W PHP można utworzyć zmiennę bez jawnego określania typu zmiennej. Wywołanie zmiennej zaczyna się od symbolu $
+a po tym symbolu nazwa zmiennej. Do wyświetlenia danych na ekranie potrzebne jest użycie instrukcji:
+echo "napis" . zmienna;   albo tak samo print, jednak ta instrukcja zwraca wartosc.
+
+C++ do działania konieczne jest zastosowanie dyrektywy: #include <iostream> i instrukcji: using namespace std;
+W C++ aby utworzyć zmiennę to musi ona mieć jawnie określony typ. Do jej wywołania należy wpisać jej nazwę.
+Aby wyświetlać dane na ekranie należy użyć instrukcję: cout << "napis" << zmienna << endl;   Do pobierania danych
+konieczne jest użycie instrukcji: cin >> zmienna;
+
+W Java utworzenie i wywołanie zmiennej jest takie same jak w C++. Wypisanie danych na ekran jest realizowana za pomocą
+instrukcji: System.out.println("napis" + zmienna);   Za pobieranie danych odpowiada obiekt klasy Scanner. Metody klasy
+Scanner pozwalają na pobieranie danych. Każda metoda jest inna w zależności od typu pobieranej wartości.
+Np. nextLine() do String, nextInt() do int, nextDouble() do double, nextFloat() do float.
+
+czym jest operator << w C++?
+Operator << w C++ to operator wyjścia.
+
+czym jest operacja srand(time(NULL)); w C++?
+Funkcja ustawia punkt startowy, który jest stosowany do generowania serii
+pseudo losowych liczb całkowitych.
