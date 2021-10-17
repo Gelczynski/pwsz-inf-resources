@@ -33,3 +33,7 @@ Operator << w C++ to operator wyjścia.
 czym jest operacja srand(time(NULL)); w C++?
 Funkcja ustawia punkt startowy, który jest stosowany do generowania serii
 pseudo losowych liczb całkowitych.
+
+co należałoby dodać do konstruktora klasy Circle, aby upewnić się, że obiekt będzie miał sens geometryczny?
+Należałoby dodać w konstruktorze klasy Circle instrukcję warunkową sprawdzającą czy promień ma długość mniejszą niż 0 lub równą 0.
+Jeśli tak jest, to informuje o tym użytkownika i zatrzymuje program.
