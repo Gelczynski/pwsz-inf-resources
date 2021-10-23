@@ -32,7 +32,7 @@ W innych jezykach ta instrukcja wyrzuca wyjatek jako klase.
 
 
 z grubsza: zmienne, rzeczy ktore nie powinny zostac zmieniane powinny byc uzyte przez konstruktora klasy. te ktore maja sie zmieniac
-jak chocby pozycja pionka i cos podobnego, to dla nich ustawic settera. zalecane, zeby wszystkie pola byly prywatne.
+jak chocby pozycja pionka i cos podobnego, to dla nich ustawic settera. zalecane, zeby wszystkie pola byly prywatne/wykreslic.
 specjalnie dla tych pol zrobic gettery.
 
 
@@ -41,9 +41,6 @@ specjalnie dla tych pol zrobic gettery.
 Należy rozszerzyć program z grą tak, aby przedstawić znajomość zagadnień przedstawianych na dotychczasowych zajęciach;
 należą do nich idea programowania obiektowego, pola i metody, konstruktory, hermetyzacja.
 	
-	do gry przy każdym uruchomieniu zostanie dodanych n graczy; 3 <= n <= 10; n losowe lub konfigurowalne;
-			nazwy graczy powinny być sensownie losowane lub podawane z klawiatury;
-	kostka powinna mieć możliwość ustwienia liczby ścian przed dodaniem do gry;
 	gra powinna mieć możliwość ustawienia przed rozpoczęciem rozgrywki maksymalnej liczby pól;
 	gra powinna mieć możliwość ustawienia przed rozpoczęciem rozgrywki opcjonalnej maksymalnej liczby ruchów.
 

@@ -8,8 +8,6 @@
 
 using namespace std;
 
-#define DlugoscNazwy 30
-
 class Log 
 {
 	public:
@@ -21,8 +19,10 @@ class Log
 
 class Dice
 {
-	private:
-		int IloscScian;
+	public:
+		int IloscScian = 0;//druga zmienna ma przypisana wartosc z wprowadzonej zmiennej
+		//ta zmienna jest przyspisywana do ilosc scian w returnie
+		// lub przypisac 0 do ilosc scian
 	public:
 		Dice()
 		{
@@ -45,7 +45,7 @@ class Dice
 	public:
 		int GetterRoll()
 		{
-			return this->roll();
+			return this->IloscScian;
 		}
 };
 
@@ -81,62 +81,6 @@ class Pawn
 		}
 };
 
-class Board
-{
-	private:
-		int maxPosition;
-		int turnsCounter;
-		int MaxTurnsCounter = 0;
-		
-	public:
-		vector<Pawn> pawns;
-		Dice dice;
-		Pawn winner;
-		Board()
-		{
-			this->turnsCounter = 0;
-		}
-		
-		Board(int maxPosition, int MaxTurnsCounter)
-		{
-			this->maxPosition = maxPosition;
-			this->MaxTurnsCounter = MaxTurnsCounter;
-		}
-		
-		Board(int maxPosition)
-		{
-			this->maxPosition = maxPosition;
-		}
-		
-		void performTurn()
-		{
-			this->turnsCounter++;
-			
-			ostringstream ss;
-			ss << "Ruch " << this->turnsCounter;
-			Log::info();
-			Log::info(ss.str());
-			
-			for(int i = 0; i < pawns.size(); i++) {
-				int rollResult = dice.GetterRoll();
-				Pawn &pawn = this->pawns[i];
-				int PawnPozycja = pawn.GetterPawnPosition();
-				PawnPozycja += rollResult;
-				pawn.SetterPosition(PawnPozycja);
-				
-				ostringstream ss;
-				ss << pawn.GetterPawnName() << " nowa pozycja: " << pawn.GetterPawnPosition();
-				Log::info(ss.str());
-				
-				if(pawn.GetterPawnPosition() >= this->maxPosition ||
-				(this->turnsCounter >= this->MaxTurnsCounter) && this->MaxTurnsCounter != 0)
-				{
-					this->winner = pawn;
-					throw "Winner was called!";
-				}
-			}
-		}
-};
 
 class Sprawdz
 {
@@ -163,12 +107,12 @@ class Sprawdz
 		{
 			bool decyzja = true;
 			
-			if(nazwa.length() > 25 || nazwa.length() < 3)
+			if(nazwa.length() > 14 || nazwa.length() < 3)
 			{
 				decyzja = false;
 				
 				cout << "Nazwa nie moze byc za krotka lub za dluga!" << endl;
-				cout << "Nazwa powinnna zawierac od 3 do 25 znakow!" << endl;
+				cout << "Nazwa powinnna zawierac od 3 do 14 znakow!" << endl;
 				cout << "Nazwa dla gracza nr " << i+1 << ":" << endl;
 			}
 			
@@ -245,15 +189,120 @@ class Sprawdz
 		}
 };
 
+
+class Board
+{
+	private:
+		int maxPosition;
+		int turnsCounter;
+		int MaxTurnsCounter = 0;
+		
+	public:
+		Pawn pawns[10];
+		Dice dice;
+		Pawn winner;
+		Board()
+		{
+			this->turnsCounter = 0;
+		}
+		
+		Board(int maxPosition, int MaxTurnsCounter)
+		{
+			this->maxPosition = maxPosition;
+			this->MaxTurnsCounter = MaxTurnsCounter;
+		}
+		
+		Board(int maxPosition)
+		{
+			this->maxPosition = maxPosition;
+		}
+		
+		void SetterDice(int IloscScian)
+		{
+			dice.IloscScian = IloscScian;
+			cout << "ilosc scian:  " << dice.IloscScian << endl;
+		}//jesli sie nie uda, to przypisac na sztywno w tej metodzie
+		
+		void SetterPawns(int IloscGraczy)
+		{
+			string nazwa;
+			bool decyzja = false;
+			Sprawdz sprawdz = Sprawdz();
+			cout << IloscGraczy << endl;
+			for(int i = 0; i < IloscGraczy; i++)
+			{
+			cout << "Nazwa dla gracza nr " << i+1 << ":" << endl;
+			
+			do
+			{
+				cin >> nazwa;
+				decyzja = sprawdz.SprawdzajNazweGracza(nazwa, i);
+			} while(decyzja == false);
+			
+			pawns[i] = Pawn(nazwa);
+			}
+		}
+		
+		int GetterRollDice()
+		{
+			int result = dice.GetterRoll();
+			return result;
+		}
+		
+		void performTurn(Pawn pawns[10])
+		{
+			this->turnsCounter++;
+			
+			this->pawns[10] = pawns;
+			
+			ostringstream ss;
+			ss << "Ruch " << this->turnsCounter;
+			Log::info();
+			Log::info(ss.str());
+			cout << "ilosc scian  " << dice.IloscScian << endl;
+			for(int i = 0; i < 10; i++) {
+				int rollResult = GetterRollDice();
+				cout << "nazwa pionka " << pawns[i].GetterPawnName() << endl;
+				cout << "wynik posrednio z zmiennej po wykonaniu metody getterroll" << rollResult << endl;
+				cout << "wynik bezposrednio z metody dice getterroll" << this->dice.GetterRoll() << endl;
+				cout << "rozmiar tablicy: " << sizeof(this->pawns) << endl;
+				Pawn &pawn = this->pawns[i];
+				cout << pawn.GetterPawnName()<< endl;
+				pawn = this->pawns[1];
+				cout << pawn.GetterPawnName()<< endl;
+				pawn = this->pawns[2];
+				cout << pawn.GetterPawnName()<< endl;
+				pawn = this->pawns[3];
+				cout << pawn.GetterPawnName()<< endl;
+				int PawnPozycja = pawn.GetterPawnPosition();
+				cout << "pozycja pionka z zmiennej po odczytaniu wartosci: " << PawnPozycja << endl;
+				PawnPozycja += rollResult;
+				cout << "pozycja pionka po dodaniu wyniku rzutu kosztki: " << PawnPozycja << endl;
+				pawn.SetterPosition(PawnPozycja);
+				cout << "pozycja pionka po zapisaniu wyniku" << endl;
+				ostringstream ss;
+				ss << pawn.GetterPawnName() << " Nowa pozycja: " << pawn.GetterPawnPosition();
+				Log::info(ss.str());
+				
+				if(pawn.GetterPawnPosition() >= this->maxPosition ||
+				(this->turnsCounter >= this->MaxTurnsCounter) && this->MaxTurnsCounter != 0)
+				{
+					this->winner = pawn;
+					throw "Winner was called!";
+				}
+			}
+		}
+};
+
+
+
 int main() {
 	srand(time(NULL));
 	
 	string nazwa;
 	float TestIlosci;
-	int liczba;
 	bool decyzja = false;
 	string Odpowiedz;
-	vector<Pawn> pionki;
 	
 	Board board = Board();
 	board.dice = Dice();
@@ -265,28 +314,13 @@ int main() {
 	do
 	{
 		cin >> TestIlosci;
-		
 		decyzja = sprawdz.SprawdzajLiczbeGraczy(TestIlosci);
 	} while(decyzja == false);
-	
-	cin.clear();
-    cin.ignore(10000,'\n');
 	
 	int IloscGraczy = TestIlosci;
 	decyzja = false;
 	
-	for(int i = 0; i < IloscGraczy; i++)
-	{
-		cout << "Nazwa dla gracza nr " << i+1 << ":" << endl;
-		
-		do
-		{
-			getline(cin, nazwa);
-			decyzja = sprawdz.SprawdzajNazweGracza(nazwa, i);
-		} while(decyzja == false);
-		
-		pionki.push_back(Pawn(nazwa));
-	}
+	board.SetterPawns(IloscGraczy);
 	
 	decyzja = false;
 	
@@ -300,6 +334,8 @@ int main() {
 	
 	int IloscScian = TestIlosci;
 	decyzja = false;
+	
+	board.SetterDice(IloscScian);
 	
 	cout << "Jaka maksymalna liczbe pol ustawic?" << endl;
 	
@@ -341,16 +377,9 @@ int main() {
 		board = Board(maxPosition, MaxTurnsCounter);
 	}
 	
-	for(int i=0; i<pionki.size(); i++)
-	{
-		board.pawns.push_back(pionki.at(i));
-	}
-	
-	board.dice = Dice(IloscScian);
-	
 	try {
 		while(true) {
-			board.performTurn();
+			board.performTurn(board.pawns);
 		}
 	} catch(const char* exception) {
 		Log::info();
