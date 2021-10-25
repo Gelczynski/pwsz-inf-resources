@@ -8,8 +8,6 @@
 
 using namespace std;
 
-#define DlugoscNazwy 30
-
 class Log 
 {
 	public:
@@ -163,7 +161,7 @@ class Sprawdz
 		{
 			bool decyzja = true;
 			
-			if(nazwa.length() > 25 || nazwa.length() < 3)
+			if(nazwa.length() > 30 || nazwa.length() < 3)
 			{
 				decyzja = false;
 				
