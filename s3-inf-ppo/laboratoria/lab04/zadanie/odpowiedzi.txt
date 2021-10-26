@@ -6,6 +6,7 @@ private w c++ (sprawdzic!), co w php, cs i java?
 
 lepiej użyć publicznego pola czy prywatnego pola z ustawionym getterem i setterem?
 lepiej uzyc prywatnego pola z ustawionym getterem i setterem.
+
 jaki jest cel używania modyfikatora protected?
 
 czy enkapsujacja różni się od hermetyzacji?
@@ -27,23 +28,3 @@ czy się różni ten sam kod w różnych językach?
 W C++ w metodzie PerformTurn klasy Board instrukcja if na koncu po spelnieniu warunku, ze pozycja pionka
 bedzie rowna lub wieksza od maksymalnej pozycji to zglasza pionka jako zwyciezce i wyrzuca napis jako wyjatek.
 W innych jezykach ta instrukcja wyrzuca wyjatek jako klase.
-
-
-
-
-z grubsza: zmienne, rzeczy ktore nie powinny zostac zmieniane powinny byc uzyte przez konstruktora klasy. te ktore maja sie zmieniac
-jak chocby pozycja pionka i cos podobnego, to dla nich ustawic settera. zalecane, zeby wszystkie pola byly prywatne/wykreslic.
-specjalnie dla tych pol zrobic gettery.
-
-
-
-
-Należy rozszerzyć program z grą tak, aby przedstawić znajomość zagadnień przedstawianych na dotychczasowych zajęciach;
-należą do nich idea programowania obiektowego, pola i metody, konstruktory, hermetyzacja.
-	
-	gra powinna mieć możliwość ustawienia przed rozpoczęciem rozgrywki maksymalnej liczby pól;
-	gra powinna mieć możliwość ustawienia przed rozpoczęciem rozgrywki opcjonalnej maksymalnej liczby ruchów.
-
-Podpowiedzi i wskazówki:
-	należy zastanowić się które pola i metody powinny być publiczne, a które prywatne;
-	należy zastanowić się które dane powinny być wpisywane do obiektu przez konstruktor, a jakie przez dodatkowe metody.
