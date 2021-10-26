@@ -131,8 +131,6 @@ class Board
 			for(int i = 0; i < pawns.size(); i++) {
 				int rollResult = dice.GetterRoll();
 				
-				
-				
 				Pawn &pawn = this->pawns[i];
 				int PawnPozycja = pawn.GetterPawnPosition();
 				
