@@ -1,30 +1,41 @@
 jakie są zasady gry?
-
+Program tworzy grę planszowa z pionkami o nazwie Luke Skywalker i Darth Vader. Gra losuje wynik rzutu kostka i dodaje
+wynik do pozycji pionka, któremu rzucono kostkę. Pionek zwycięża jeśli jego pozycja będzie równa lub większa od 100.
 
 jaki jest domyślny modyfikator dostępu do pól i metod w wybranym języku?
-private w c++ (sprawdzic!), co w php, cs i java?
+Domyślnymi modyfikatorami dostępu dla danych języków są:
+PHP - public
+C# - private /upewnic sie
+Java - package-private
+c++ - private
 
 lepiej użyć publicznego pola czy prywatnego pola z ustawionym getterem i setterem?
-lepiej uzyc prywatnego pola z ustawionym getterem i setterem.
+Lepiej użyć prywatnego pola z ustawionym getterem i setterem.
 
 jaki jest cel używania modyfikatora protected?
+Modyfikator protected nie zezwala na dostęp do stałych, zmiennych, metod itp. spoza klasy, a także dziedziczących klas.
 
 czy enkapsujacja różni się od hermetyzacji?
-
+Hermetyzacja polega na ukrywaniu pewnych danych składowych lub metod obiektów danej klasy tak,
+aby były one dostępne tylko metodom wewnętrznym danej klasy. Hermetyzacja to też enkapsulacja.
 
 czym jest metoda statyczna?
-
+Jest to metoda, którą można przywołać bez konieczności utworzenia obiektu klasy zawierającą tę metodę.
 
 czym jest pętla foreach()?
-
+Pętla pobiera zmiennę z tablicy i przypisuje do pomocniczej zmiennej, a następnie wykonuje instrukcje w pętli i przechodzi
+do następnej zmiennej. Pętla skończy się gdy przejdzie do ostatniej zmiennej w tablicy i wykona instrukcje w pętli. 
 
 kiedy główna pętla gry się zatrzyma i jak działają wyjątki?
-
+Główna pętla gry się zatrzyma kiedy zostanie wyrzucony wyjątek. Wyjątek jest wyrzucony w momencie gdy pionek przekroczy lub osiągnie 100.
+Metoda performTurn klasy Board wyrzuca wyjątek gdy pionek osiągnie przynajmniej 100. Instrukcja try catch z pętlą
+przechwytuje ten wyjątek i przerywa pętlę i potem wypisuje zwycięzcę.
 
 czy lepiej jest inicjować pola klasy przy deklaracji czy w konstruktorze?
-Lepiej jest inicjowac pola klasy w konstruktorze.
+Lepiej jest inicjować pola klasy w konstruktorze.
 
 czy się różni ten sam kod w różnych językach?
-W C++ w metodzie PerformTurn klasy Board instrukcja if na koncu po spelnieniu warunku, ze pozycja pionka
-bedzie rowna lub wieksza od maksymalnej pozycji to zglasza pionka jako zwyciezce i wyrzuca napis jako wyjatek.
-W innych jezykach ta instrukcja wyrzuca wyjatek jako klase.
+W C++ w metodzie PerformTurn klasy Board instrukcja if na końcu po spełnieniu warunku, że pozycja pionka
+będzie równa lub większa od maksymalnej pozycji to zgłasza pionka jako zwyciezce i wyrzuca napis jako wyjatek, a try catch
+przechwytuje dowolny wyjątek.
+W innych jezykach ta instrukcja wyrzuca wyjatek jako zmienną wyjątku, a try catch przechwytuje te konkretne zmienne wyjątku.

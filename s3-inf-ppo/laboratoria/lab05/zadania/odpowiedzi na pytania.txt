@@ -1,12 +1,21 @@
-Dziedziczenie polega na przekazywaniu cech, funkcji klas. Podklasy moga dziedziczyc od nadklasy
-cechy, fukncje, instrukcje, metody i pola. Podklasy moga wtedy uzyc je jako wlasne.
-Dziedziczenie pozwala na stworzenie szablonow do podklas i dzieki temu zaoszczedzic czas.
+jak działa dziedziczenie?
+Dziedziczenie polega na przekazywaniu cech, funkcji klas. Podklasy mogą dziedziczyć od nadklasy
+cechy, fukncje, instrukcje, metody i pola. Podklasy mogą wtedy użyc je jako własne.
+Dziedziczenie pozwala na stworzenie szablonów do podklas i dzięki temu zaoszczędzić czas.
 
-Klasa oznaczona jako final nie może być dziedziczona. final moze byc uzyty
+czym jest modyfikator final?
+Klasa oznaczona jako final nie może być dziedziczona. Final może być użyty
 przy deklaracji klasy aby zapobiec dziedziczeniu danej klasy.
 
-Klasa oznaczona jako abstract moze byc uzyta tylko jako nadklasa do dziedziczenia.
-Takiej nadklasy nie bedzie mozna uzyc do czegokolwiek innego niz do dziedziczenia.
+czym jest modyfikator virtual?
 
-Nie ma ograniczen w ilosci podklas dziedziczacych z jednej nadklasy.
+czym jest modyfikator abstract?
+Klasa oznaczona jako abstract może być użyta tylko jako nadklasa do dziedziczenia.
+Takiej nadklasy nie będzie można użyc do czegokolwiek innego niż do dziedziczenia.
 
+czym jest metoda super()?
+
+ile klas może dziedziczyć z jednej klasy?
+Nie ma ograniczń w ilości podklas dziedziczących z jednej nadklasy.
+
+ile klas może być dziedziczonych w jednej klasie?
