@@ -8,14 +8,23 @@ Klasa oznaczona jako final nie może być dziedziczona. Final może być użyty
 przy deklaracji klasy aby zapobiec dziedziczeniu danej klasy.
 
 czym jest modyfikator virtual?
+Modyfikator, który umożliwia polimorfizm bez wieloznaczności. klasy pochodne, które odziedziczyły
+tę samą klasę oznaczoną jako wirtualną, dziedziczą tylko jeden obiekt tej klasy bazowej.
+Modyfikator umożliwia na stworzenie obiektu klasy dziedziczącej dwóch klas pochodnych, które
+odziedziczyły wspólną klasę wirtualną, obiektu, który ma tylko jedną kopię obiektu wirtualnej
+nadklasy podklas. Jest to możliwe dzięki temu, że odziedziczone obiekty podklas wirtualnej
+nadklasy nie mają odrębnych kopii obiektu wirtualnej nadklasy, ale dzielą jeden wspólny.
 
 czym jest modyfikator abstract?
 Klasa oznaczona jako abstract może być użyta tylko jako nadklasa do dziedziczenia.
 Takiej nadklasy nie będzie można użyc do czegokolwiek innego niż do dziedziczenia.
 
 czym jest metoda super()?
+Służy ona do wywoływania metod klasy nadrzędnej o podanych parametrach.
 
 ile klas może dziedziczyć z jednej klasy?
-Nie ma ograniczń w ilości podklas dziedziczących z jednej nadklasy.
+Nie ma ograniczeń w ilości podklas dziedziczących z jednej nadklasy.
 
 ile klas może być dziedziczonych w jednej klasie?
+Również nie ma ograniczeń w ilości odziedziczonych nadklas w jednej podklasie.
+Java jest wyjątkiem i nie obsługuje wielodziedziczenia.
