@@ -26,5 +26,6 @@ ile klas może dziedziczyć z jednej klasy?
 Nie ma ograniczeń w ilości podklas dziedziczących z jednej nadklasy.
 
 ile klas może być dziedziczonych w jednej klasie?
-Również nie ma ograniczeń w ilości odziedziczonych nadklas w jednej podklasie.
-Java jest wyjątkiem i nie obsługuje wielodziedziczenia.
+Również nie ma ograniczeń w ilości odziedziczonych nadklas w jednej podklasie w językach
+python i C++. Ale w językach C#, java, PHP może to być tylko jedna odziedziczona nadklasa
+w podklasach.
