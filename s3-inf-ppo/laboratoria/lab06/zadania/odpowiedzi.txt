@@ -1,0 +1,21 @@
+jak wygląda hierarchia dziedziczenia w przykładowym programie?
+Klasy ForcePower i ForceUser dziedziczą obiekt (object). Z kolei nadklasę
+ForceUser dziedziczą 3 podklasy: LightsaberUser, LightSideForceUser i
+DarkSideForceUser. A klasa JediMaster dziedziczy nadklasy
+LightsaberUser i LightSideForceUser, a klasa SithLord dziedziczy nadklasy
+LightsaberUser i DarkSideForceUser.
+
+czym się różni dziedziczenie w Pythonie od dziedziczenia w PHP, Javie czy C#?
+W Pythonie dziedziczenie jest wielokrotne czyli podklasy mogą dziedziczyć wiele
+nadklas, a w PHP, Javie i C# już nie ma wielokrotnego dziedziczenia.
+
+czym jest funkcja __init__()?
+funkcja __init__() jest konstruktorem.
+
+ilu różnych form ataku może użyc lord Sithów?
+5
+
+czym jest funkcja super()?
+Służy ona do wywoływania funkcji klasy nadrzędnej o podanych parametrach.
+
+jakie mogłoby być uzasadnione wykorzystanie przykładowego programu?
